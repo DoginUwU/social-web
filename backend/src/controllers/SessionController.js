@@ -3,8 +3,8 @@ module.exports = {
     async create(request, response){
         const { id } = request.body;
         
-        const user = await conn('users').where('id', id)
-        .select('first_name').first();
+        const user= await conn('users').where('id', id)
+        .select('first_name').select('image').first();
 
         if(!user)
             return response.status(400).json({ error: 'No User Found'});

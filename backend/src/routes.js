@@ -12,6 +12,7 @@ routes.post('/sessions', SessionController.create);
 //request, response
 routes.get('/users', UsersController.index);
 routes.post('/users', UsersController.create);
+routes.delete('/users/:id/:password', UsersController.delete);
 
 routes.get('/profile', ProfileController.index);
 
